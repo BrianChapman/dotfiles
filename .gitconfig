@@ -5,6 +5,13 @@
 
 	# View the current working tree status using the short format
 	s = status -s
+	st = status -s
+	sta = status -s
+	stat = status -s
+	statu = status -s
+	a = add -A .
+	unstage = reset HEAD --
+	last = log -1 HEAD
 
 	# Show the diff between the latest commit and the current state
 	d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
@@ -16,7 +23,7 @@
 	p = !"git pull; git submodule foreach git pull origin master"
 
 	# Clone a repository including all submodules
-	c = clone --recursive
+	# c = clone --recursive
 
 	# Commit all changes
 	ca = !git add -A && git commit -av
@@ -84,11 +91,15 @@
 	# Detect whitespace errors when applying a patch
 	whitespace = fix
 
+[branch]
+	autosetupmerge = always
+
 [core]
 
 	# Use custom `.gitignore` and `.gitattributes`
 	excludesfile = ~/.gitignore
 	attributesfile = ~/.gitattributes
+	editor = emacs -nw
 
 	# Treat spaces before tabs and all kinds of trailing whitespace as an error
 	# [default] trailing-space: looks for spaces at the end of a line
@@ -105,6 +116,7 @@
 
 	# Speed up commands involving untracked files such as `git status`.
 	# https://git-scm.com/docs/git-update-index#_untracked_cache
+	# run `git update-index --test-untracked-cache` to check if your fs supports this.
 	untrackedCache = true
 
 [color]

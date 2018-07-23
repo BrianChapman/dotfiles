@@ -61,6 +61,16 @@ prompt_git() {
 	fi;
 }
 
+# Determine active Python virtualenv details.
+function venv_name () {
+  if test -z "$VIRTUAL_ENV" ; then
+      return;
+  else
+    VIRTUAL_ENV=$(basename `pwd`)
+  	echo -e "${1}`echo \"$VIRTUAL_ENV\"`${COLOR_NONE}"
+  fi
+}
+
 if tput setaf 1 &> /dev/null; then
 	tput sgr0; # reset colors
 	bold=$(tput bold);
@@ -106,14 +116,15 @@ else
 fi;
 
 # Set the terminal title and prompt.
-PS1="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${bold}\]\n"; # newline
-PS1+="\[${userStyle}\]\u"; # username
+#PS1="\[\033]0;\W\007\]"; # working directory base name
+#PS1+="\[${bold}\]\n"; # newline
+PS1="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\] at ";
 PS1+="\[${hostStyle}\]\h"; # host
 PS1+="\[${white}\] in ";
 PS1+="\[${green}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
+PS1+="\$(venv_name \"\[${white}\] with env \[${violet}\]\")"; # python venv name
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
 export PS1;
