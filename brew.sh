@@ -99,6 +99,12 @@ brew install pyenv
 pyenv install 3.6.4
 pyenv global 3.6.4
 
+# Dev tools
+brew install rabbitmq
+brew services start rabbitmq
+brew install redis
+brew services start redis
+
 # Applications
 brew cask install flux
 echo "Open f.lux and set it to start on startup."
