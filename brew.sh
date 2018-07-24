@@ -106,6 +106,8 @@ brew cask install sublime-text
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 brew cask install slate
 echo "Open Preferences/Security and Privacy/Accessibility and allow the slate app to control your computer."
+brew install nvm
+mkdir ~/.nvm
 
 
 # Remove outdated versions from the cellar.
