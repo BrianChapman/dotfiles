@@ -6,8 +6,10 @@
 	"installed_packages":
 	[
 		"Git",
+		"GitGutter",
 		"Jedi - Python autocompletion",
 		"Package Control",
+		"Python Fix Imports",
 		"requirementstxt",
 		"SideBarEnhancements",
 		"SublimeLinter",
