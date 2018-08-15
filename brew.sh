@@ -111,6 +111,10 @@ echo "Open f.lux and set it to start on startup."
 brew cask install sublime-text
 ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
 brew cask install slate
+#Touchbar customization
+brew cask install mtmr
+cp init/MTMR/items.json "~/Library/Application Support/MTMR/items.json"
+
 echo "Open Preferences/Security and Privacy/Accessibility and allow the slate app to control your computer."
 brew install nvm
 mkdir ~/.nvm
