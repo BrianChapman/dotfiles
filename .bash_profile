@@ -66,3 +66,5 @@ export PROMPT_COMMAND=_virtualenv_auto_activate
 
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
+
+eval "$(pyenv init -)"

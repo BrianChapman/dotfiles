@@ -47,7 +47,7 @@ alias dir="ls -lF ${colorflag}"
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
-alias rgrep='rgrep --color=auto'
+alias rgrep='grep -R --color=auto'
 alias sgrep='sgrep --exclude-dir=\*/.svn/\* --exclude=\*~'
 
 # Enable aliases to be sudo’ed
